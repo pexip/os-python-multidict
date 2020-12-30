@@ -1,0 +1,14 @@
+#! /usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+export PYBUILD_NAME=multidict
+export PYBUILD_DISABLE=test/python3-dbg
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_strip:
+	dh_strip --no-automatic-dbgsym

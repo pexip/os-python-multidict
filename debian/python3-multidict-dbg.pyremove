@@ -1,0 +1,2 @@
+multidict/*.h
+multidict/_multilib/*.h

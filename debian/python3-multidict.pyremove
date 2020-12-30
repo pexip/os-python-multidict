@@ -1,0 +1,2 @@
+multidict/*.c
+multidict/*.pyx

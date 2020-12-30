@@ -1,0 +1,21 @@
+From: Nicolas Dandrimont <olasd@debian.org>
+Date: Wed, 20 Nov 2019 15:16:37 +0100
+Subject: Drop coverage options from pytest
+
+---
+ setup.cfg | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.cfg b/setup.cfg
+index 2c11fd4..fd3da51 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -21,7 +21,7 @@ known_third_party = pytest
+ [tool:pytest]
+ testpaths = tests
+ norecursedirs = dist build .tox docs requirements tools
+-addopts = --doctest-modules --cov=multidict --cov-report term-missing:skip-covered --cov-report xml --junitxml=junit-test-results.xml -v
++addopts = --doctest-modules -v
+ doctest_optionflags = ALLOW_UNICODE ELLIPSIS
+ junit_family = xunit2
+ 
