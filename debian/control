@@ -1,8 +1,9 @@
 Source: python-multidict
 Section: python
 Priority: optional
-Maintainer: Piotr Ożarowski <piotr@debian.org>
-Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Piotr Ożarowski <piotr@debian.org>
+XSBC-Pexip-Original-Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Build-Depends: debhelper-compat (= 12), dh-python,
                python3-all-dev, python3-all-dbg,
                python3-setuptools,
@@ -13,6 +14,7 @@ Standards-Version: 4.5.0
 Homepage: https://github.com/aio-libs/multidict/
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-multidict.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-multidict
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
 
 Package: python3-multidict
 Architecture: any

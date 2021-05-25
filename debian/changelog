@@ -1,3 +1,9 @@
+python-multidict (5.1.0-1pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Huw Jones <huw@pexip.com>  Tue, 25 May 2021 12:26:24 +0100
+
 python-multidict (5.1.0-1) unstable; urgency=medium
 
   [ Debian Janitor ]
