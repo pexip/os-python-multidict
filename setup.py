@@ -61,10 +61,11 @@ args = dict(
         "Intended Audience :: Developers",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Development Status :: 5 - Production/Stable",
     ],
     author="Andrew Svetlov",
@@ -72,7 +73,7 @@ args = dict(
     url="https://github.com/aio-libs/multidict",
     project_urls={
         "Chat: Gitter": "https://gitter.im/aio-libs/Lobby",
-        "CI: Azure Pipelines": "https://dev.azure.com/aio-libs/multidict/_build",
+        "CI: GitHub": "https://github.com/aio-libs/multidict/actions",
         "Coverage: codecov": "https://codecov.io/github/aio-libs/multidict",
         "Docs: RTD": "https://multidict.readthedocs.io",
         "GitHub: issues": "https://github.com/aio-libs/multidict/issues",
@@ -80,8 +81,9 @@ args = dict(
     },
     license="Apache 2",
     packages=["multidict"],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     include_package_data=True,
+    exclude_package_data={"": ["*.c", "*.h"]},
 )
 
 if not NO_EXTENSIONS:

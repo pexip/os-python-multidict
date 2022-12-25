@@ -1,3 +1,32 @@
+python-multidict (6.0.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 25 Dec 2022 22:39:53 +0100
+
+python-multidict (6.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Wed, 21 Dec 2022 13:00:57 +0100
+
+python-multidict (6.0.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 04 Nov 2022 16:09:31 +0100
+
+python-multidict (5.1.0-2) unstable; urgency=medium
+
+  [ Sandro Tosi ]
+  * Use the new Debian Python Team contact name and address
+  * Drop -dbg package; Closes: #994362
+
+  [ Laurent Bigonville ]
+  * debian/control: Remove python3-psutil BD, not needed anymore
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 03 Jun 2022 15:30:44 -0400
+
 python-multidict (5.1.0-1) unstable; urgency=medium
 
   [ Debian Janitor ]

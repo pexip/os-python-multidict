@@ -144,7 +144,7 @@ MultiDict
 
    .. method:: pop(key[, default])
 
-      An alias to :meth:`pop`
+      An alias to :meth:`popone`
 
       .. versionchanged:: 3.0
 
@@ -324,7 +324,7 @@ CIMultiDictProxy
 
    Case insensitive version of :class:`MultiDictProxy`.
 
-   Raises :exc:`TypeError` is *multidict* is not :class:`CIMultiDict` instance.
+   Raises :exc:`TypeError` if *multidict* is not :class:`CIMultiDict` instance.
 
    The class is inherited from :class:`MultiDict`.
 
