@@ -32,6 +32,7 @@ multidict/_multilib/istr.h
 multidict/_multilib/iter.h
 multidict/_multilib/pair_list.h
 multidict/_multilib/views.h
+tests/__init__.py
 tests/cimultidict.pickle.0
 tests/cimultidict.pickle.1
 tests/cimultidict.pickle.2

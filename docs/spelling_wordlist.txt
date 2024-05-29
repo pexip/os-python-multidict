@@ -22,6 +22,7 @@ css
 ctor
 Ctrl
 cython
+Deprecations
 deallocation
 dict
 docstrings
@@ -72,6 +73,8 @@ regex
 regexs
 repo
 runtime
+runtimes
+str
 subclassable
 subclassing
 subprotocol

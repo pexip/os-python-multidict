@@ -3,12 +3,11 @@ Section: python
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Piotr Ożarowski <piotr@debian.org>
-XSBC-Pexip-Original-Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Debian Python Team <team+python@tracker.debian.org>
 Build-Depends: debhelper-compat (= 12), dh-python,
-               python3-all-dev, python3-all-dbg,
+               python3-all-dev,
                python3-setuptools,
                python3-pytest,
-               python3-psutil,
                cython3
 Standards-Version: 4.5.0
 Homepage: https://github.com/aio-libs/multidict/
@@ -25,17 +24,3 @@ Description: multidict implementation (Python library)
  HTTP Headers and URL query string require specific data structure:
  multidict. It behaves mostly like a dict but it can have
  several values for the same key.
-
-Package: python3-multidict-dbg
-Architecture: any
-Depends: python3-multidict (= ${binary:Version}), ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}
-Section: debug
-Multi-Arch: same
-Description: multidict implementation (Python library, debug extension)
- Multidicts are useful for working with HTTP headers, URL query args etc.
- .
- HTTP Headers and URL query string require specific data structure:
- multidict. It behaves mostly like a dict but it can have
- several values for the same key.
- .
- This package contains extension built for the Python 3 debug interpreter.
