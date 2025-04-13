@@ -4,14 +4,19 @@ Priority: optional
 Maintainer: Piotr Ożarowski <piotr@debian.org>
 Uploaders: Debian Python Team <team+python@tracker.debian.org>
 Build-Depends: debhelper-compat (= 12), dh-python,
+               pybuild-plugin-pyproject,
                python3-all-dev,
                python3-setuptools,
+               cython3,
+# tests:
                python3-pytest,
-               cython3
+               python3-pytest-cov,
+               python3-objgraph,
 Standards-Version: 4.5.0
 Homepage: https://github.com/aio-libs/multidict/
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-multidict.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-multidict
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: python3-multidict
 Architecture: any

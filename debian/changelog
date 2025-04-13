@@ -1,3 +1,60 @@
+python-multidict (6.4.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 13 Apr 2025 11:41:34 +0200
+
+python-multidict (6.3.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add python3-objgraph to Build-Depends (used in tests)
+  * Add test_views_benchmarks.py to ignored tests (missing pytest-codspeed)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat, 05 Apr 2025 13:17:30 +0200
+
+python-multidict (6.2.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove pytest-codspeed again; it's only available on some architectures.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 25 Mar 2025 22:25:04 +0000
+
+python-multidict (6.2.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Piotr Ożarowski ]
+  * Generate temporary pickles used during tests
+
+  [ Colin Watson ]
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 23 Mar 2025 17:54:34 +0000
+
+python-multidict (6.1.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 10 Sep 2024 13:25:27 +0100
+
+python-multidict (6.0.5-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release:
+    - Fix build failures with GCC 14 (closes: #1075418).
+  * Use pybuild-plugin-pyproject.
+  * Enable autopkgtest-pkg-pybuild.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 21 Aug 2024 12:34:26 +0100
+
+python-multidict (6.0.4-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Pull upstream patches for Python 3.12 compatibility. Closes: #1055717.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 03 Jan 2024 12:13:23 +0100
+
 python-multidict (6.0.4-1) unstable; urgency=medium
 
   * New upstream release

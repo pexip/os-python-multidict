@@ -371,7 +371,7 @@ case-folded string keys explicitly hand, e.g::
    'value'
 
 For performance :class:`istr` strings should be created once and
-stored somewhere for the later usage, see :mod:`aiohttp.hdrs` for example.
+stored somewhere for the later usage, see :mod:`aiohttp:aiohttp.hdrs` for example.
 
 .. class:: istr(object='')
            istr(bytes_or_buffer[, encoding[, errors]])
@@ -393,12 +393,12 @@ stored somewhere for the later usage, see :mod:`aiohttp.hdrs` for example.
 
 .. versionchanged:: 2.0
 
-   ``upstr`` is a deprecated alias for ``istr``.
+   ``upstr()`` is a deprecated alias for :class:`istr`.
 
 .. versionchanged:: 3.7
 
-   ``istr`` doesn't title-case its argument anymore but uses internal lower-cased data
-   for fast case-insensitive comparison.
+   :class:`istr` doesn't title-case its argument anymore but uses
+   internal lower-cased data for fast case-insensitive comparison.
 
 
 Abstract Base Classes
@@ -425,3 +425,32 @@ multidict value types, e.g. ``md: MultiDict[str] = MultiDict()``.
 The type of multidict keys is always :class:`str` or a class derived from a string.
 
 .. versionadded:: 3.7
+
+
+Environment variables
+=====================
+
+.. envvar:: MULTIDICT_NO_EXTENSIONS
+
+   An environment variable that instructs the packaging scripts to skip
+   compiling the C-extension based variant of :mod:`multidict`.
+   When used in runtime, it instructs the pure-Python variant to be imported
+   from the top-level :mod:`multidict` entry-point package, even when the
+   C-extension implementation is available.
+
+   .. caution::
+
+      The pure-Python (uncompiled) version is roughly 20-50 times slower than
+      its C counterpart, depending on the way it's used.
+
+.. envvar:: MULTIDICT_DEBUG_BUILD
+   
+   An environment variable that instructs the packaging scripts to compile
+   the C-extension based variant of :mod:`multidict` with debug symbols.
+   This is useful for debugging the C-extension code, but it will result in
+   a larger binary size and worse performance.
+
+   .. caution::
+
+      The debug build is not intended for production use and should only be
+      used for development and debugging purposes.

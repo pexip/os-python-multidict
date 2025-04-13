@@ -5,6 +5,16 @@ DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
 
 export PYBUILD_NAME=multidict
+export PYBUILD_BEFORE_TEST=cp -r {dir}/tests {build_dir} && cd {build_dir}/tests/ && {interpreter} ./gen_pickles.py
+# pytest-codspeed is only available on some architectures, and we don't
+# really need to run benchmarks.
+export PYBUILD_TEST_ARGS := --ignore tests/test_multidict_benchmarks.py --ignore tests/test_views_benchmarks.py
+ifneq ($(PYBUILD_AUTOPKGTEST),1)
+# These tests use isolated mode (-I), so they only work when the package is
+# installed.
+PYBUILD_TEST_ARGS += --deselect tests/test_circular_imports.py
+endif
+export PYBUILD_AFTER_TEST = rm -f {build_dir}/junit-test-results.xml
 
 %:
 	dh $@ --with python3 --buildsystem=pybuild
