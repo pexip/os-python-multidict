@@ -1,9 +1,14 @@
+include .coveragerc
+include pyproject.toml
+include pytest.ini
 include LICENSE
 include CHANGES.rst
 include README.rst
 include Makefile
 graft multidict
 graft docs
+graft CHANGES
+graft requirements
 graft tests
 global-exclude *.pyc
 include multidict/*.c
