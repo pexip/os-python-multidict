@@ -1,5 +1,5 @@
 # Some simple testing tasks (sorry, UNIX only).
-.PHONY: all build flake test vtest cov clean doc mypy
+.PHONY: all build test vtest cov clean doc
 
 
 PYXS = $(wildcard multidict/*.pyx)
@@ -11,16 +11,6 @@ all: test
 	pip install -r requirements/dev.txt
 	@touch .install-deps
 
-.flake: .install-deps $(shell find multidict -type f) \
-		      $(shell find tests -type f)
-	flake8 multidict tests
-	@if ! isort --check multidict tests; then \
-	    echo "Import sort errors, run 'make fmt' to fix them!!!"; \
-	    isort --diff --check multidict tests; \
-	    false; \
-	fi
-	@touch .flake
-
 
 isort-check:
 	@if ! isort --check $(SRC); then \
@@ -29,9 +19,6 @@ isort-check:
 	    false; \
 	fi
 
-flake8:
-	flake8 $(SRC)
-
 black-check:
 	@if ! isort --check $(SRC); then \
 	    echo "black errors, run 'make fmt' to fix them!!!"; \
@@ -39,19 +26,14 @@ black-check:
 	    false; \
 	fi
 
-mypy:
-	mypy
-
-lint: mypy flake8 black-check isort-check check_changes
+lint: black-check isort-check
+	python -Im pre_commit run --all-files --show-diff-on-failure
 
 fmt:
 	black -t py35 $(SRC)
 	isort $(SRC)
 
-check_changes:
-	./tools/check_changes.py
-
-.develop: .install-deps $(shell find multidict -type f) .flake check_changes mypy
+.develop: .install-deps $(shell find multidict -type f)
 	pip install -e .
 	@touch .develop
 
@@ -73,11 +55,11 @@ cov-dev-full: cov-ci-run
 	@echo "open file://`pwd`/htmlcov/index.html"
 
 doc:
-	@make -C docs html SPHINXOPTS="-W -E"
+	@make -C docs html SPHINXOPTS="-W -n --keep-going -E"
 	@echo "open file://`pwd`/docs/_build/html/index.html"
 
 doc-spelling:
-	@make -C docs spelling SPHINXOPTS="-W -E"
+	@make -C docs spelling SPHINXOPTS="-W -n --keep-going -E"
 
 install:
 	@pip install -U 'pip'

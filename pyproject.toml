@@ -1,17 +1,14 @@
 [build-system]
 requires = ["setuptools >= 40"]
-
-
-[tool.towncrier]
-package = "multidict"
-filename = "CHANGES.rst"
-directory = "CHANGES/"
-title_format = "{version} ({project_date})"
-issue_format = ":issue:`{issue}`"
+build-backend = "setuptools.build_meta"
 
 
 [tool.cibuildwheel]
-test-requires = "-r requirements/ci.txt"
-test-command = "pytest {project}/tests"
+test-requires = "-r requirements/pytest.txt"
+test-command = 'pytest -m "not leaks" --no-cov {project}/tests'
 # don't build PyPy wheels, install from source instead
 skip = "pp*"
+free-threaded-support = true
+
+[tool.cibuildwheel.linux]
+before-all = "yum install -y libffi-devel || apk add --upgrade libffi-dev || apt-get install libffi-dev"
